@@ -27,22 +27,22 @@ public class IngredienteController {
 	@Autowired
 	IngredienteService ingredienteService;
 	
-	@GetMapping("/findAll")
+	@GetMapping("/ingredientes/findAll")
 	public List<IngredienteEntity> findAll(){
 		return ingredienteService.ingredienteEntities();
 	}
 	
-	@GetMapping("/findOne")
+	@GetMapping("/ingredientes/findOne")
 	public IngredienteEntity findOne(Long id) {
 		return ingredienteService.getIngredienteEntity(id);
 	}
 	
-	@PostMapping("/save")
+	@PostMapping("/ingredientes/save")
 	public boolean save(@RequestBody IngredienteEntity ingrediente) {
 		return ingredienteService.save(ingrediente);
 	}
 	
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping("/ingredientes/delete/{id}")
 	public boolean delete(@PathVariable Long id) {
 		return ingredienteService.deleteById(id);
 	}

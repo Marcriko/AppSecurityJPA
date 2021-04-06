@@ -26,22 +26,22 @@ public class PlatilloController {
 	@Autowired
 	PlatilloService platilloService;
 	
-	@GetMapping("/findAll")
+	@GetMapping("/platillo/findAll")
 	public List<PlatilloEntity> findAll(){
 		return platilloService.platilloEntities();
 	}
 	
-	@GetMapping("/findOne/{id}")
+	@GetMapping("/platillo/findOne/{id}")
 	public PlatilloEntity findOne(@PathVariable Long id) {
 		return platilloService.getPlatilloEntity(id);
 	}
 	
-	@PostMapping("/save")
+	@PostMapping("/platillo/save")
 	public boolean save(@RequestBody PlatilloEntity platillo) {
 		return platilloService.save(platillo);
 	}
 	
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping("/platillo/delete/{id}")
 	public boolean delete(@PathVariable Long id) {
 		return platilloService.delete(id);
 	}

@@ -28,22 +28,22 @@ public class PedidoController {
 	@Autowired
 	PedidoService pedidoService;
 	
-	@GetMapping("/findAll")
+	@GetMapping("/pedido/findAll")
 	public List<PedidoEntity> findAll(){
 		return pedidoService.pedidoEntities();
 	}
 	
-	@GetMapping("/findOne/{id}")
+	@GetMapping("/pedido/findOne/{id}")
 	public PedidoEntity findOne(@PathVariable Long id) {
 		return pedidoService.getPedidoEntity(id);
 	}
 	
-	@PostMapping("/save")
+	@PostMapping("/pedido/save")
 	public boolean save(@RequestBody PedidoEntity pedido) {
 		return pedidoService.save(pedido);
 	}
 	
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping("/pedido/delete/{id}")
 	public boolean delete(@PathVariable Long id) {
 		return pedidoService.delete(id);
 	}

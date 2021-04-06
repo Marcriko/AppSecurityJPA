@@ -27,22 +27,22 @@ public class CuponController {
 	@Autowired
 	CuponService cuponService;
 	
-	@GetMapping("/findAll")
+	@GetMapping("/cupon/findAll")
 	public List<CuponEntity> findAll(){
 		return cuponService.getCuponEntities();
 	}
 	
-	@GetMapping("/findOne/{id}")
+	@GetMapping("/cupon/findOne/{id}")
 	public CuponEntity findOne(@PathVariable Long id) {
 		return cuponService.getCuponEntity(id);
 	}
 	
-	@PostMapping("/save")
+	@PostMapping("/cupon/save")
 	public boolean save(@RequestBody CuponEntity cupon) {
 		return cuponService.save(cupon);
 	}
 	
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping("/cupon/delete/{id}")
 	public boolean delete(@PathVariable Long id) {
 		return cuponService.delete(id);
 	}

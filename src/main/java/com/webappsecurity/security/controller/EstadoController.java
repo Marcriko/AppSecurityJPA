@@ -27,22 +27,22 @@ public class EstadoController {
 	@Autowired
 	EstadoService estadoService;
 	
-	@GetMapping("/findAll")
+	@GetMapping("/estado/findAll")
 	public List<EstadoEntity> findAll(){
 		return estadoService.estadoEntities();
 	}
 	
-	@GetMapping("/findOne/{id}")
+	@GetMapping("/estado/findOne/{id}")
 	public EstadoEntity findOne(@PathVariable Long id) {
 		return estadoService.getEstadoEntity(id);
 	}
 	
-	@PostMapping("/save")
+	@PostMapping("/estado/save")
 	public boolean save(@RequestBody EstadoEntity estado) {
 		return estadoService.saveEstado(estado);
 	}
 	
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping("/estado/delete/{id}")
 	public boolean delete(@PathVariable Long id) {
 		return estadoService.deleteEstado(id);
 	}

@@ -23,12 +23,12 @@ public class PersonaController {
 	@Autowired
 	PersonaService personaService;
 	
-	@GetMapping("/findOne")
+	@GetMapping("/persona/findOne")
 	public PersonaEntity findOne(Long id) {
 		return personaService.getPersonaEntity(id);
 	}
 	
-	@PostMapping("/save")
+	@PostMapping("/persona/save")
 	public boolean save(@RequestBody PersonaEntity persona) {
 		return personaService.save(persona);
 	}

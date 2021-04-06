@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*",methods = {RequestMethod.GET,RequestMethod.POST,RequestMethod.DELETE,RequestMethod.PUT},allowedHeaders = "*")
 public class IndexController {
 	
-	@GetMapping("/login")
+	/*@GetMapping("/login")
 	public String login() {
 		return "login";
 	}
@@ -22,5 +22,5 @@ public class IndexController {
 	public String index() {
 		return "index";
 	}
-
+*/
 }

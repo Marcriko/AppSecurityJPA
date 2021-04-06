@@ -27,22 +27,22 @@ public class PromocionController {
 	@Autowired
 	PromocionService promocionService;
 	
-	@GetMapping("/findAll")
+	@GetMapping("/promocion/findAll")
 	public List<PromocionEntity> findAll(){
 		return promocionService.promocionEntities();
 	}
 	
-	@GetMapping("/findOne/{id}")
+	@GetMapping("/promocion/findOne/{id}")
 	public PromocionEntity findOne(@PathVariable Long id) {
 		return promocionService.findOne(id);
 	}
 	
-	@PostMapping("/save")
+	@PostMapping("/promocion/save")
 	public boolean save(@RequestBody PromocionEntity promocion) {
 		return promocionService.save(promocion);
 	}
 	
-	@DeleteMapping("/delete/{id}")
+	@DeleteMapping("/promocion/delete/{id}")
 	public boolean delete(@PathVariable Long id) {
 		return promocionService.delete(id);
 	}
