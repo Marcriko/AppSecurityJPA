@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,11 +18,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.webappsecurity.security.DTO.JwtDTO;
 import com.webappsecurity.security.DTO.LoginUsuario;
+import com.webappsecurity.security.entity.Usuario;
+import com.webappsecurity.security.enums.RolNombre;
 import com.webappsecurity.security.jwt.JwtProvider;
+import com.webappsecurity.security.service.UsuarioService;
+
 
 @RestController
 @RequestMapping("/auth")
@@ -32,6 +38,8 @@ public class LoginController {
 	private AuthenticationManager authenticationManager;
 	@Autowired
 	private JwtProvider jwtProvider;
+	@Autowired
+	private UsuarioService usuarioService;
 	@PostMapping("/login")
 	public ResponseEntity<JwtDTO> responseEntity(@Valid @RequestBody LoginUsuario loginUsuario, 
 			BindingResult bindingResult) {
@@ -39,6 +47,7 @@ public class LoginController {
 			return new ResponseEntity("Datos incompletos",HttpStatus.BAD_REQUEST);
 		}
 		try {
+				
 			Authentication authentication = authenticationManager.authenticate(
 					new UsernamePasswordAuthenticationToken(
 							loginUsuario.getNickname(),loginUsuario.getPassword())
@@ -53,4 +62,10 @@ public class LoginController {
 			return new ResponseEntity("Usuario y/o contraseña incorrectos",HttpStatus.BAD_REQUEST);
 		}
 	}
+	@PostMapping("/register")
+	public ResponseEntity<?> saveUser(@Valid @RequestBody Usuario user, @RequestParam RolNombre id){
+		System.out.println(id);
+		return ResponseEntity.ok(usuarioService.save(user, id));
+	}
+	
 }

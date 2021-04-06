@@ -30,6 +30,7 @@ public class PlatilloEntity {
 	private Double precio;
 	@ManyToMany
 	private List<IngredienteEntity> ingredientes;
+	
 	//
 	public int getIdPlatillo() {
 		return idPlatillo;
