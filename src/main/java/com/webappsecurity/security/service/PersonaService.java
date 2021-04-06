@@ -26,5 +26,8 @@ public class PersonaService {
 		personaRepository.deleteById(id);
 		return !personaRepository.existsById(id);
 	}
+	public PersonaEntity getPersonaEntity(Long id) {
+		return personaRepository.getOne(id);
+	}
 	
 }

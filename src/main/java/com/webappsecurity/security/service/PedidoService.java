@@ -28,4 +28,8 @@ public class PedidoService {
 		pedidoRepository.deleteById(id);
 		return !pedidoRepository.existsById(id);
 	}
+
+	public PedidoEntity getPedidoEntity(Long id) {
+		return pedidoRepository.getOne(id);
+	}
 }

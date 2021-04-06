@@ -28,4 +28,8 @@ public class PlatilloService {
 		platilloRepository.deleteById(id);
 		return !platilloRepository.existsById(id);
 	}
+
+	public PlatilloEntity getPlatilloEntity(Long id) {
+		return platilloRepository.getOne(id);
+	}
 }

@@ -1,8 +1,6 @@
 package com.webappsecurity.security.service;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 
 import javax.transaction.Transactional;

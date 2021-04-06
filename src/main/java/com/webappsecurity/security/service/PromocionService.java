@@ -27,4 +27,7 @@ public class PromocionService {
 		promocionRepository.deleteById(id);
 		return !promocionRepository.existsById(id);
 	}
+	public PromocionEntity findOne(long id) {
+		return promocionRepository.getOne(id);
+	}
 }

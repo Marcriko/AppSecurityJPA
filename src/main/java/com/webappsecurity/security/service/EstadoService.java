@@ -28,4 +28,8 @@ public class EstadoService {
 		estadoRepository.deleteById(id);
 		return !estadoRepository.existsById(id);
 	}
+
+	public EstadoEntity getEstadoEntity(Long id) {
+		return estadoRepository.getOne(id);
+	}
 }

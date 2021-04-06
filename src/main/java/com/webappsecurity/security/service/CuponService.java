@@ -29,4 +29,8 @@ public class CuponService {
 		return !cuponRepository.existsById(id);
 	}
 	
+	public CuponEntity getCuponEntity(long id) {
+		return cuponRepository.getOne(id);
+	}
+	
 }

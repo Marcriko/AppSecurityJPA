@@ -28,4 +28,9 @@ public class IngredienteService {
 		ingredienteRepository.deleteById(id);
 		return !ingredienteRepository.existsById(id);
 	}
+
+	public IngredienteEntity getIngredienteEntity(Long id) {
+		return ingredienteRepository.getOne(id);
+		
+	}
 }
