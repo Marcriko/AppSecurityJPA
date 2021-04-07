@@ -20,13 +20,13 @@ public class PersonaService {
 		return personaRepository.findAll();
 	}
 	public boolean save(PersonaEntity personaEntity) {
-		return personaRepository.existsById((long) personaRepository.save(personaEntity).getIdPersona());
+		return personaRepository.existsById((int) personaRepository.save(personaEntity).getIdPersona());
 	}
-	public boolean delete(long id) {
+	public boolean delete(int id) {
 		personaRepository.deleteById(id);
 		return !personaRepository.existsById(id);
 	}
-	public PersonaEntity getPersonaEntity(Long id) {
+	public PersonaEntity getPersonaEntity(int id) {
 		return personaRepository.getOne(id);
 	}
 	

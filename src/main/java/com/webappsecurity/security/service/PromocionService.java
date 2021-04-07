@@ -21,13 +21,13 @@ public class PromocionService {
 	}
 	
 	public boolean save (PromocionEntity promocionEntity) {
-		return promocionRepository.existsById((long) promocionRepository.save(promocionEntity).getIdPromocion());
+		return promocionRepository.existsById((int) promocionRepository.save(promocionEntity).getIdPromocion());
 	}
-	public boolean delete(long id) {
+	public boolean delete(int id) {
 		promocionRepository.deleteById(id);
 		return !promocionRepository.existsById(id);
 	}
-	public PromocionEntity findOne(long id) {
+	public PromocionEntity findOne(int id) {
 		return promocionRepository.getOne(id);
 	}
 }

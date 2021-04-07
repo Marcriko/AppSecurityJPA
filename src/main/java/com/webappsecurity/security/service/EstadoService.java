@@ -21,15 +21,15 @@ public class EstadoService {
 	}
 	
 	public boolean saveEstado(EstadoEntity entity) {
-		return estadoRepository.existsById((long) estadoRepository.save(entity).getIdEstado());
+		return estadoRepository.existsById((int) estadoRepository.save(entity).getIdEstado());
 	}
 	
-	public boolean deleteEstado(long id) {
+	public boolean deleteEstado(int id) {
 		estadoRepository.deleteById(id);
 		return !estadoRepository.existsById(id);
 	}
 
-	public EstadoEntity getEstadoEntity(Long id) {
+	public EstadoEntity getEstadoEntity(int id) {
 		return estadoRepository.getOne(id);
 	}
 }

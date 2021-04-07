@@ -8,6 +8,6 @@ import com.webappsecurity.security.entity.IngredienteEntity;
 
 
 @Repository
-public interface IngredienteRepository extends JpaRepository<IngredienteEntity, Long>{
+public interface IngredienteRepository extends JpaRepository<IngredienteEntity, Integer>{
 
 }

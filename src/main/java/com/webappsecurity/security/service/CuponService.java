@@ -21,15 +21,15 @@ public class CuponService {
 	}
 	
 	public boolean save(CuponEntity cuponEntity) {
-		return cuponRepository.existsById((long) cuponRepository.save(cuponEntity).getIdCupon());
+		return cuponRepository.existsById((int) cuponRepository.save(cuponEntity).getIdCupon());
 	}
 	
-	public boolean delete(long id) {
+	public boolean delete(int id) {
 		cuponRepository.deleteById(id);
 		return !cuponRepository.existsById(id);
 	}
 	
-	public CuponEntity getCuponEntity(long id) {
+	public CuponEntity getCuponEntity(int id) {
 		return cuponRepository.getOne(id);
 	}
 	

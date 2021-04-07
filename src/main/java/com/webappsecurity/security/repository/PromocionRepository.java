@@ -8,6 +8,6 @@ import com.webappsecurity.security.entity.PromocionEntity;
 
 
 @Repository
-public interface PromocionRepository extends JpaRepository<PromocionEntity, Long>{
+public interface PromocionRepository extends JpaRepository<PromocionEntity, Integer>{
 
 }

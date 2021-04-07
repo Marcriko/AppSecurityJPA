@@ -21,15 +21,15 @@ public class IngredienteService {
 	}
 	
 	public boolean save(IngredienteEntity entity) {
-		return ingredienteRepository.existsById((long) ingredienteRepository.save(entity).getIdIngrediente());
+		return ingredienteRepository.existsById((int) ingredienteRepository.save(entity).getIdIngrediente());
 	}
 	
-	public boolean deleteById (long id) {
+	public boolean deleteById (int id) {
 		ingredienteRepository.deleteById(id);
 		return !ingredienteRepository.existsById(id);
 	}
 
-	public IngredienteEntity getIngredienteEntity(Long id) {
+	public IngredienteEntity getIngredienteEntity(int id) {
 		return ingredienteRepository.getOne(id);
 		
 	}

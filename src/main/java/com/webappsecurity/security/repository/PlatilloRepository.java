@@ -8,6 +8,6 @@ import com.webappsecurity.security.entity.PlatilloEntity;
 
 
 @Repository
-public interface PlatilloRepository extends JpaRepository<PlatilloEntity, Long>{
+public interface PlatilloRepository extends JpaRepository<PlatilloEntity, Integer>{
 
 }

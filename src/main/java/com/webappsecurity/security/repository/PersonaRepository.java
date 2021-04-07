@@ -8,5 +8,5 @@ import com.webappsecurity.security.entity.PersonaEntity;
 
 
 @Repository
-public interface PersonaRepository extends JpaRepository<PersonaEntity, Long>{
+public interface PersonaRepository extends JpaRepository<PersonaEntity, Integer>{
 }

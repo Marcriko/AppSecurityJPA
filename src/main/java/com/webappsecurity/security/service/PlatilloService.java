@@ -21,15 +21,15 @@ public class PlatilloService {
 	}
 	
 	public boolean save(PlatilloEntity platilloEntity) {
-		return platilloRepository.existsById((long) platilloRepository.save(platilloEntity).getIdPlatillo());
+		return platilloRepository.existsById((int) platilloRepository.save(platilloEntity).getIdPlatillo());
 	}
 	
-	public boolean delete(long id) {
+	public boolean delete(int id) {
 		platilloRepository.deleteById(id);
 		return !platilloRepository.existsById(id);
 	}
 
-	public PlatilloEntity getPlatilloEntity(Long id) {
+	public PlatilloEntity getPlatilloEntity(int id) {
 		return platilloRepository.getOne(id);
 	}
 }

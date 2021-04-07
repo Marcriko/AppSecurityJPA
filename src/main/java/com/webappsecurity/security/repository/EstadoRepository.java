@@ -8,6 +8,6 @@ import com.webappsecurity.security.entity.EstadoEntity;
 
 
 @Repository
-public interface EstadoRepository extends JpaRepository<EstadoEntity, Long>{
+public interface EstadoRepository extends JpaRepository<EstadoEntity, Integer>{
 
 }

@@ -8,6 +8,6 @@ import com.webappsecurity.security.entity.PedidoEntity;
 
 
 @Repository
-public interface PedidoRepository extends JpaRepository<PedidoEntity, Long>{
+public interface PedidoRepository extends JpaRepository<PedidoEntity, Integer>{
 
 }
