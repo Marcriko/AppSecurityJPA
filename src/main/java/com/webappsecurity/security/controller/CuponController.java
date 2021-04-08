@@ -33,7 +33,7 @@ public class CuponController {
 	}
 	
 	@GetMapping("/cupon/findOne/{id}")
-	public CuponEntity findOne(@PathVariable Long id) {
+	public CuponEntity findOne(@PathVariable int id) {
 		return cuponService.getCuponEntity(id);
 	}
 	
@@ -43,7 +43,7 @@ public class CuponController {
 	}
 	
 	@DeleteMapping("/cupon/delete/{id}")
-	public boolean delete(@PathVariable Long id) {
+	public boolean delete(@PathVariable int id) {
 		return cuponService.delete(id);
 	}
 }

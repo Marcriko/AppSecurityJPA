@@ -32,7 +32,7 @@ public class PlatilloController {
 	}
 	
 	@GetMapping("/platillo/findOne/{id}")
-	public PlatilloEntity findOne(@PathVariable Long id) {
+	public PlatilloEntity findOne(@PathVariable int id) {
 		return platilloService.getPlatilloEntity(id);
 	}
 	
@@ -42,7 +42,7 @@ public class PlatilloController {
 	}
 	
 	@DeleteMapping("/platillo/delete/{id}")
-	public boolean delete(@PathVariable Long id) {
+	public boolean delete(@PathVariable int id) {
 		return platilloService.delete(id);
 	}
 	

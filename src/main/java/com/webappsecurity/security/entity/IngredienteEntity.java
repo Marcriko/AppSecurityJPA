@@ -15,8 +15,8 @@ public class IngredienteEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idIngrediente;
-	@NotBlank
-	@NotNull
+	@NotBlank(message = "El nombre del ingrediente no puede ir en blanco")
+	@NotNull(message = "Ingresar un nombre para el ingrediente")
 	private String nombre;
 	//
 	public int getIdIngrediente() {

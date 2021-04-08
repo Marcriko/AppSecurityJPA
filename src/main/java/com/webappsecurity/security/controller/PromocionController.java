@@ -33,7 +33,7 @@ public class PromocionController {
 	}
 	
 	@GetMapping("/promocion/findOne/{id}")
-	public PromocionEntity findOne(@PathVariable Long id) {
+	public PromocionEntity findOne(@PathVariable int id) {
 		return promocionService.findOne(id);
 	}
 	
@@ -43,7 +43,7 @@ public class PromocionController {
 	}
 	
 	@DeleteMapping("/promocion/delete/{id}")
-	public boolean delete(@PathVariable Long id) {
+	public boolean delete(@PathVariable int id) {
 		return promocionService.delete(id);
 	}
 

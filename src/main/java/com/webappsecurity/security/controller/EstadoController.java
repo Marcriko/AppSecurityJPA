@@ -33,7 +33,7 @@ public class EstadoController {
 	}
 	
 	@GetMapping("/estado/findOne/{id}")
-	public EstadoEntity findOne(@PathVariable Long id) {
+	public EstadoEntity findOne(@PathVariable int id) {
 		return estadoService.getEstadoEntity(id);
 	}
 	
@@ -43,7 +43,7 @@ public class EstadoController {
 	}
 	
 	@DeleteMapping("/estado/delete/{id}")
-	public boolean delete(@PathVariable Long id) {
+	public boolean delete(@PathVariable int id) {
 		return estadoService.deleteEstado(id);
 	}
 

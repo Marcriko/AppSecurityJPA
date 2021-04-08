@@ -2,6 +2,8 @@ package com.webappsecurity.security.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -33,17 +35,17 @@ public class IngredienteController {
 	}
 	
 	@GetMapping("/ingredientes/findOne")
-	public IngredienteEntity findOne(Long id) {
+	public IngredienteEntity findOne(int id) {
 		return ingredienteService.getIngredienteEntity(id);
 	}
 	
 	@PostMapping("/ingredientes/save")
-	public boolean save(@RequestBody IngredienteEntity ingrediente) {
+	public boolean save(@Valid @RequestBody IngredienteEntity ingrediente) {
 		return ingredienteService.save(ingrediente);
 	}
 	
 	@DeleteMapping("/ingredientes/delete/{id}")
-	public boolean delete(@PathVariable Long id) {
+	public boolean delete(@PathVariable int id) {
 		return ingredienteService.deleteById(id);
 	}
 	
