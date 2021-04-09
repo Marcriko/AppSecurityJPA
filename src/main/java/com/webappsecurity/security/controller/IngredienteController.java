@@ -34,7 +34,7 @@ public class IngredienteController {
 		return ingredienteService.ingredienteEntities();
 	}
 	
-	@GetMapping("/ingredientes/findOne")
+	@GetMapping("/ingredientes/findOne/{id}")
 	public IngredienteEntity findOne(int id) {
 		return ingredienteService.getIngredienteEntity(id);
 	}

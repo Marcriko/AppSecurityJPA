@@ -28,6 +28,6 @@ public class PromocionService {
 		return !promocionRepository.existsById(id);
 	}
 	public PromocionEntity findOne(int id) {
-		return promocionRepository.getOne(id);
+		return promocionRepository.findById(id);
 	}
 }

@@ -30,7 +30,7 @@ public class IngredienteService {
 	}
 
 	public IngredienteEntity getIngredienteEntity(int id) {
-		return ingredienteRepository.getOne(id);
+		return ingredienteRepository.findById(id);
 		
 	}
 }

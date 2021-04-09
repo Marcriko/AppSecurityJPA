@@ -30,6 +30,6 @@ public class PedidoService {
 	}
 
 	public PedidoEntity getPedidoEntity(int id) {
-		return pedidoRepository.getOne(id);
+		return pedidoRepository.findById(id);
 	}
 }

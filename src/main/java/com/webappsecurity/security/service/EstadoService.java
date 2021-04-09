@@ -30,6 +30,6 @@ public class EstadoService {
 	}
 
 	public EstadoEntity getEstadoEntity(int id) {
-		return estadoRepository.getOne(id);
+		return estadoRepository.findById(id);
 	}
 }

@@ -9,4 +9,5 @@ import com.webappsecurity.security.entity.PersonaEntity;
 
 @Repository
 public interface PersonaRepository extends JpaRepository<PersonaEntity, Integer>{
+	PersonaEntity findById(int id);
 }

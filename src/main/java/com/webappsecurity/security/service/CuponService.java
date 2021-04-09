@@ -1,6 +1,7 @@
 package com.webappsecurity.security.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,8 +30,8 @@ public class CuponService {
 		return !cuponRepository.existsById(id);
 	}
 	
-	public CuponEntity getCuponEntity(int id) {
-		return cuponRepository.getOne(id);
+	public Optional<CuponEntity> getCuponEntity(int id) {
+		return cuponRepository.findById(id);
 	}
 	
 }

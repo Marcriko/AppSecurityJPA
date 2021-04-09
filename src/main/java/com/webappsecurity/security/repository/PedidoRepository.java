@@ -9,5 +9,5 @@ import com.webappsecurity.security.entity.PedidoEntity;
 
 @Repository
 public interface PedidoRepository extends JpaRepository<PedidoEntity, Integer>{
-
+	PedidoEntity findById(int id);
 }
