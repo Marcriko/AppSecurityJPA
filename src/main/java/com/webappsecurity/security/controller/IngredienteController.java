@@ -35,7 +35,7 @@ public class IngredienteController {
 	}
 	
 	@GetMapping("/ingredientes/findOne/{id}")
-	public IngredienteEntity findOne(int id) {
+	public IngredienteEntity findOne(@PathVariable("id") int id) {
 		return ingredienteService.getIngredienteEntity(id);
 	}
 	
@@ -45,7 +45,7 @@ public class IngredienteController {
 	}
 	
 	@DeleteMapping("/ingredientes/delete/{id}")
-	public boolean delete(@PathVariable int id) {
+	public boolean delete(@PathVariable("id") int id) {
 		return ingredienteService.deleteById(id);
 	}
 	

@@ -10,6 +10,5 @@ import com.webappsecurity.security.entity.IngredienteEntity;
 
 @Repository
 public interface IngredienteRepository extends JpaRepository<IngredienteEntity, Integer>{
-	IngredienteEntity findById(int id);
-
+	IngredienteEntity findByIdIngrediente(int idIngrediente);
 }

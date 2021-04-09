@@ -30,8 +30,8 @@ public class CuponService {
 		return !cuponRepository.existsById(id);
 	}
 	
-	public Optional<CuponEntity> getCuponEntity(int id) {
-		return cuponRepository.findById(id);
+	public CuponEntity getCuponEntity(int id) {
+		return cuponRepository.getOne(id);
 	}
 	
 }

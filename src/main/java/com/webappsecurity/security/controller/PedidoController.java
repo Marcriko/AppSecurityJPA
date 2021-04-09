@@ -34,7 +34,7 @@ public class PedidoController {
 	}
 	
 	@GetMapping("/pedido/findOne/{id}")
-	public PedidoEntity findOne(@PathVariable int id) {
+	public PedidoEntity findOne(@PathVariable("id") int id) {
 		return pedidoService.getPedidoEntity(id);
 	}
 	
@@ -44,7 +44,7 @@ public class PedidoController {
 	}
 	
 	@DeleteMapping("/pedido/delete/{id}")
-	public boolean delete(@PathVariable int id) {
+	public boolean delete(@PathVariable("id") int id) {
 		return pedidoService.delete(id);
 	}
 	

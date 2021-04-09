@@ -9,6 +9,5 @@ import com.webappsecurity.security.entity.EstadoEntity;
 
 @Repository
 public interface EstadoRepository extends JpaRepository<EstadoEntity, Integer>{
-	EstadoEntity findById(int id);
-
+	EstadoEntity findByIdEstado(int idEstado);
 }

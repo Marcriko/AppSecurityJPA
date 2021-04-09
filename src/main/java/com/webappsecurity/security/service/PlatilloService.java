@@ -30,6 +30,6 @@ public class PlatilloService {
 	}
 
 	public PlatilloEntity getPlatilloEntity(int id) {
-		return platilloRepository.findById(id);
+		return platilloRepository.findByIdPlatillo(id);
 	}
 }

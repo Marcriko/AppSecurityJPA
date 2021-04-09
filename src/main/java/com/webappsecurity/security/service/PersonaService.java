@@ -27,7 +27,7 @@ public class PersonaService {
 		return !personaRepository.existsById(id);
 	}
 	public PersonaEntity getPersonaEntity(int id) {
-		return personaRepository.findById(id);
+		return personaRepository.findByIdPersona(id);
 	}
 	
 }

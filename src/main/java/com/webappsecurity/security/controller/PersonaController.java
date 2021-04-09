@@ -25,7 +25,7 @@ public class PersonaController {
 	PersonaService personaService;
 	
 	@GetMapping("/persona/findOne/{id}")
-	public PersonaEntity findOne(@PathVariable int id) {
+	public PersonaEntity findOne(@PathVariable("id") int id) {
 		return personaService.getPersonaEntity(id);
 	}
 	
