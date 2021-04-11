@@ -7,7 +7,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.webappsecurity.security.entity.PedidoEntity;
+import com.webappsecurity.security.entity.Usuario;
 import com.webappsecurity.security.repository.PedidoRepository;
+import com.webappsecurity.security.repository.UsuarioRepository;
 
 
 @Service
@@ -15,6 +17,8 @@ import com.webappsecurity.security.repository.PedidoRepository;
 public class PedidoService {
 	@Autowired
 	private PedidoRepository pedidoRepository;
+	@Autowired
+	private UsuarioRepository usuarioRepository;
 	
 	public List<PedidoEntity> pedidoEntities() {
 		return pedidoRepository.findAll();
@@ -31,5 +35,10 @@ public class PedidoService {
 
 	public PedidoEntity getPedidoEntity(int id) {
 		return pedidoRepository.findByIdPedido(id);
+	}
+	public List<PedidoEntity> getPedidosByCliente(String username) {
+		Usuario user = usuarioRepository.findByNickname(username);
+		return pedidoRepository.findByCliente(user);
+		
 	}
 }

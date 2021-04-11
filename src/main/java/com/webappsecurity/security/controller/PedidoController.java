@@ -47,5 +47,11 @@ public class PedidoController {
 	public boolean delete(@PathVariable("id") int id) {
 		return pedidoService.delete(id);
 	}
+	@GetMapping("/pedido/findPedidosByUser/{username}")
+	public List<PedidoEntity> findPedidosByUser(@PathVariable("username") String username) {
+		return pedidoService.getPedidosByCliente(username);
+	}
+	
+	
 	
 }
