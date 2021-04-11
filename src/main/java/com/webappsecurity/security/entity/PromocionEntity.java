@@ -4,8 +4,9 @@ import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import javax.persistence.Id;
@@ -16,6 +17,8 @@ import javax.persistence.ManyToMany;
 @Table(name = "promocion")
 public class PromocionEntity {
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
 	private int idPromocion;
 	
 	@NotNull
@@ -29,6 +32,9 @@ public class PromocionEntity {
 	
 	@NotNull
 	private Date fechaFin;
+	@NotNull
+	private String imagen;
+	
 	
 	@NotNull
 	@ManyToMany
@@ -79,5 +85,18 @@ public class PromocionEntity {
 	public void setPrecioPromocion(Double precioPromocion) {
 		this.precioPromocion = precioPromocion;
 	}
+	public String getImagen() {
+		return imagen;
+	}
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
+	@Override
+	public String toString() {
+		return "PromocionEntity [idPromocion=" + idPromocion + ", descripcion=" + descripcion + ", limitePromociones="
+				+ limitePromociones + ", fechaInicio=" + fechaInicio + ", fechaFin=" + fechaFin + ", imagen=" + imagen
+				+ ", platillos=" + platillos + ", precioPromocion=" + precioPromocion + "]";
+	}
+	
 	
 }

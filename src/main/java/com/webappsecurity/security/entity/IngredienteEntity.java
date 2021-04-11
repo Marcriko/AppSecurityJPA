@@ -1,10 +1,10 @@
 package com.webappsecurity.security.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 
 import javax.persistence.Id;
@@ -16,8 +16,8 @@ public class IngredienteEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idIngrediente;
-	@NotBlank(message = "El nombre del ingrediente no puede ir en blanco")
 	@NotNull(message = "Ingresar un nombre para el ingrediente")
+	@Column(unique = true)
 	private String nombre;
 	//
 	public int getIdIngrediente() {

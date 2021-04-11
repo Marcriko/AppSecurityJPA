@@ -3,6 +3,7 @@ package com.webappsecurity.security.entity;
 import java.sql.Date;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -29,6 +30,20 @@ public class CuponEntity {
 	@NotNull
 	private Integer limiteUsos;
 	//
+	@Column(unique = true)
+	private String codigo;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getCodigo() {
+		return codigo;
+	}
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
 	public int getIdCupon() {
 		return id;
 	}
