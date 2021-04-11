@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.webappsecurity.security.entity.CuponEntity;
 import com.webappsecurity.security.service.CuponService;
+import com.webappsecurity.security.service.PlatilloService;
 
 
 @RestController
@@ -25,7 +26,9 @@ import com.webappsecurity.security.service.CuponService;
 public class CuponController {
 	
 	@Autowired
-	CuponService cuponService;
+	private CuponService cuponService;
+	@Autowired
+	private PlatilloService platilloService;
 	
 	@GetMapping("/cupon/findAll")
 	public List<CuponEntity> findAll(){

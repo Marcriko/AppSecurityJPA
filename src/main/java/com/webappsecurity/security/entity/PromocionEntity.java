@@ -17,23 +17,23 @@ import javax.persistence.ManyToMany;
 public class PromocionEntity {
 	@Id
 	private int idPromocion;
-	@NotBlank
+	
 	@NotNull
 	private String descripcion;
-	@NotBlank
+	
 	@NotNull
 	private Integer limitePromociones;
-	@NotBlank
+	
 	@NotNull
 	private Date fechaInicio;
-	@NotBlank
+	
 	@NotNull
 	private Date fechaFin;
-	@NotBlank
+	
 	@NotNull
 	@ManyToMany
 	private List<PlatilloEntity> platillos;
-	@NotBlank
+	
 	@NotNull
 	private Double precioPromocion;
 	//

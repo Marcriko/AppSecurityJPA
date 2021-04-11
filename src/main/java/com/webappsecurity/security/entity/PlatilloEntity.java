@@ -19,13 +19,12 @@ public class PlatilloEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPlatillo;
-	@NotBlank
 	@NotNull
 	private String nombre;
-	@NotBlank
+
 	@NotNull
 	private String descripcion;
-	@NotBlank
+
 	@NotNull
 	private Double precio;
 	@ManyToMany

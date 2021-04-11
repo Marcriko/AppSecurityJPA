@@ -15,7 +15,7 @@ public class EstadoEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idEstado;
-	@NotBlank
+	
 	@NotNull
 	private String estado;
 	//

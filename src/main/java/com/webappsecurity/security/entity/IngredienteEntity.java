@@ -12,6 +12,7 @@ import javax.persistence.Id;
 @Entity
 @Table(name = "ingrediente")
 public class IngredienteEntity {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idIngrediente;
@@ -31,5 +32,8 @@ public class IngredienteEntity {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	
+	@Override
+	public String toString() {
+		return "IngredienteEntity [idIngrediente=" + idIngrediente + ", nombre=" + nombre + "]";
+	}
 }

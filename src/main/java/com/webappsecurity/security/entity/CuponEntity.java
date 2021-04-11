@@ -19,20 +19,13 @@ public class CuponEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private int id;
-	@NotBlank
+
 	@NotNull
 	private Date fechaInicio;
-	@NotBlank
 	@NotNull
 	private Date fechaFin;
-	@NotBlank
 	@NotNull
 	private Double descuento;
-	@NotBlank
-	@NotNull
-	@ManyToMany
-	private List<PlatilloEntity> platillos;
-	@NotBlank
 	@NotNull
 	private Integer limiteUsos;
 	//
@@ -59,12 +52,6 @@ public class CuponEntity {
 	}
 	public void setDescuento(Double descuento) {
 		this.descuento = descuento;
-	}
-	public List<PlatilloEntity> getPlatillos() {
-		return platillos;
-	}
-	public void setPlatillos(List<PlatilloEntity> platillos) {
-		this.platillos = platillos;
 	}
 	public Integer getLimiteUsos() {
 		return limiteUsos;

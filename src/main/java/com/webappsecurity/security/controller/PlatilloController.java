@@ -38,6 +38,7 @@ public class PlatilloController {
 	
 	@PostMapping("/platillo/save")
 	public boolean save(@RequestBody PlatilloEntity platillo) {
+		
 		return platilloService.save(platillo);
 	}
 	

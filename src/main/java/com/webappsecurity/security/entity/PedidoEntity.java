@@ -22,18 +22,18 @@ public class PedidoEntity {
 	private int idPedido;
 	@ManyToMany
 	private List<PlatilloEntity> platillos;
-	@NotBlank
+	
 	@NotNull
 	@ManyToOne
-	private PersonaEntity cliente;
-	@NotBlank
+	private Usuario cliente;
+	
 	@NotNull
 	private Date fecha;
 	@ManyToOne
 	private PromocionEntity promocion;
 	@ManyToOne
 	private CuponEntity cupon;
-	@NotBlank
+	
 	@NotNull
 	@ManyToOne
 	private EstadoEntity estado;
@@ -50,10 +50,10 @@ public class PedidoEntity {
 	public void setPlatillos(List<PlatilloEntity> platillos) {
 		this.platillos = platillos;
 	}
-	public PersonaEntity getCliente() {
+	public Usuario getCliente() {
 		return cliente;
 	}
-	public void setCliente(PersonaEntity cliente) {
+	public void setCliente(Usuario cliente) {
 		this.cliente = cliente;
 	}
 	public Date getFecha() {
