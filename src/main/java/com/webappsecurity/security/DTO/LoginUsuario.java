@@ -1,13 +1,11 @@
 package com.webappsecurity.security.DTO;
 
-import javax.validation.constraints.NotBlank;
-
-import com.sun.istack.NotNull;
+import javax.validation.constraints.NotNull;
 
 public class LoginUsuario {
 	@NotNull
 	private String nickname;
-	@NotBlank
+	@NotNull
 	private String password;
 	
 	

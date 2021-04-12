@@ -12,6 +12,7 @@ import javax.validation.constraints.NotNull;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 @Entity
 @Table(name = "pedido")
@@ -19,8 +20,8 @@ public class PedidoEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPedido;
-	@ManyToMany
-	private List<PlatilloEntity> platillos;
+	@OneToMany
+	private List <OrdenEntity> ordenes;
 	
 	@NotNull
 	@ManyToOne
@@ -52,12 +53,7 @@ public class PedidoEntity {
 	public void setIdPedido(int idPedido) {
 		this.idPedido = idPedido;
 	}
-	public List<PlatilloEntity> getPlatillos() {
-		return platillos;
-	}
-	public void setPlatillos(List<PlatilloEntity> platillos) {
-		this.platillos = platillos;
-	}
+	
 	public Usuario getCliente() {
 		return cliente;
 	}
