@@ -62,9 +62,9 @@ public class LoginController {
 		}
 	}
 	@PostMapping("/register")
-	public ResponseEntity<?> saveUser(@Valid @RequestBody Usuario user, @RequestParam RolNombre id){
-		System.out.println(id);
-		return ResponseEntity.ok(usuarioService.save(user, id));
+	public ResponseEntity<?> saveUser(@Valid @RequestBody Usuario user){
+		
+		return ResponseEntity.ok(usuarioService.save(user, RolNombre.ROLE_CLIENT));
 	}
 	
 }

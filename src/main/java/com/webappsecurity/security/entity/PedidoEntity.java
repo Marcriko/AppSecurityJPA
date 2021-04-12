@@ -36,6 +36,15 @@ public class PedidoEntity {
 	@NotNull
 	@ManyToOne
 	private EstadoEntity estado;
+	
+	@NotNull
+	private double precio;
+	public double getPrecio() {
+		return precio;
+	}
+	public void setPrecio(double precio) {
+		this.precio = precio;
+	}
 	//
 	public int getIdPedido() {
 		return idPedido;

@@ -22,21 +22,20 @@ public class Usuario {
 	private int idUsuario;
 	@NotNull
 	private String nombre;
-	@NotBlank
+
 	@NotNull
 	private String apellidoPaterno;
-	@NotBlank
 	@NotNull
 	private String apellidoMaterno;
-
+	@NotNull
 	@Column(unique = true)
 	private String nickname;
-
+	@NotNull
 	@Column(unique = true)
 	private String email;
-
+	@NotNull
 	private String password;
-	@NotBlank
+	
 	@NotNull
 	private String direccion;
 
