@@ -10,6 +10,8 @@ import javax.validation.constraints.NotNull;
 
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 
 @Entity
@@ -29,7 +31,16 @@ public class PlatilloEntity {
 	@ManyToMany
 	private List<IngredienteEntity> ingredientes;
 	private String imagen;
+	@NotNull
+	@ManyToOne
+	private CategoriaEntity categoria;
 	
+	public CategoriaEntity getCategoria() {
+		return categoria;
+	}
+	public void setCategoria(CategoriaEntity categoria) {
+		this.categoria = categoria;
+	}
 	public String getImagen() {
 		return imagen;
 	}

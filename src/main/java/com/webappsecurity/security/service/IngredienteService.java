@@ -3,6 +3,7 @@ package com.webappsecurity.security.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -21,6 +22,7 @@ public class IngredienteService {
 	}
 	
 	public boolean save(IngredienteEntity entity) {
+		System.out.println(SecurityContextHolder.getContext());
 		return ingredienteRepository.existsById((int) ingredienteRepository.save(entity).getIdIngrediente());
 	}
 	
