@@ -17,20 +17,13 @@ public class DetallePedido {
 	private int idDetallePedido;
 	@ManyToOne
 	private PlatilloEntity platillo;
-	@ManyToOne
-	private PedidoEntity pedido;
+	
 	
 	
 	private String nota; //mensaje personalizado
 	
 	private int cantidad;
 	
-	public PedidoEntity getPedido() {
-		return pedido;
-	}
-	public void setPedido(PedidoEntity pedido) {
-		this.pedido = pedido;
-	}
 	
 	public int getIdDetallePedido() {
 		return idDetallePedido;

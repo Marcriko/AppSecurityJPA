@@ -12,6 +12,7 @@ import com.webappsecurity.security.entity.DetallePedido;
 import com.webappsecurity.security.entity.IngredienteEntity;
 import com.webappsecurity.security.entity.PedidoEntity;
 import com.webappsecurity.security.entity.Usuario;
+import com.webappsecurity.security.repository.CuponRepository;
 import com.webappsecurity.security.repository.DetallePedidoRepository;
 import com.webappsecurity.security.repository.PedidoRepository;
 import com.webappsecurity.security.repository.UsuarioRepository;
@@ -26,14 +27,14 @@ public class PedidoService {
 	private UsuarioRepository usuarioRepository;
 	@Autowired
 	private DetallePedidoRepository detallePedidoRepository;
-	
+
 	
 	public List<PedidoEntity> pedidoEntities() {
 		return pedidoRepository.findAll();
 	}
 	
 	public boolean save(PedidoEntity pedidoEntity) {
-		
+		pedidoEntity.setCliente(usuarioRepository.findByNickname(pedidoEntity.getCliente().getNickname()));
 		List<DetallePedido> detallePedidos= new ArrayList<DetallePedido>();
 		for (DetallePedido detallePedido : pedidoEntity.getDetalle()) {
 			System.out.println(detallePedido.toString());

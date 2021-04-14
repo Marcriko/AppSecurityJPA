@@ -20,7 +20,6 @@ public class CuponEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	private int id;
-
 	@NotNull
 	private Date fechaInicio;
 	@NotNull
