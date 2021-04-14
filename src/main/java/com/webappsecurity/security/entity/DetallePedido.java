@@ -31,11 +31,12 @@ public class DetallePedido {
 	public void setPedido(PedidoEntity pedido) {
 		this.pedido = pedido;
 	}
-	public int getIdOrden() {
-		return idOrden;
+	
+	public int getIdDetallePedido() {
+		return idDetallePedido;
 	}
-	public void setIdOrden(int idOrden) {
-		this.idOrden = idOrden;
+	public void setIdDetallePedido(int idDetallePedido) {
+		this.idDetallePedido = idDetallePedido;
 	}
 	public PlatilloEntity getPlatillo() {
 		return platillo;
