@@ -14,7 +14,7 @@ public class DetallePedido {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int idOrden;
+	private int idDetallePedido;
 	@ManyToOne
 	private PlatilloEntity platillo;
 	@ManyToOne
