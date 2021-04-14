@@ -1,30 +1,36 @@
 package com.webappsecurity.security.entity;
 
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "orden")
-public class OrdenEntity {
+@Table(name = "detallePedido")
+public class DetallePedido {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idOrden;
 	@ManyToOne
 	private PlatilloEntity platillo;
+	@ManyToOne
+	private PedidoEntity pedido;
+	
+	
 	private String nota; //mensaje personalizado
 	
 	private int cantidad;
-	@OneToMany
-	private List<IngredienteEntity> ingredientes;
+	
+	public PedidoEntity getPedido() {
+		return pedido;
+	}
+	public void setPedido(PedidoEntity pedido) {
+		this.pedido = pedido;
+	}
 	public int getIdOrden() {
 		return idOrden;
 	}
@@ -50,12 +56,7 @@ public class OrdenEntity {
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
 	}
-	public List<IngredienteEntity> getIngredientes() {
-		return ingredientes;
-	}
-	public void setIngredientes(List<IngredienteEntity> ingredientes) {
-		this.ingredientes = ingredientes;
-	}
+	
 	
 
 }

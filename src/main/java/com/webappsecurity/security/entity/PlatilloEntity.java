@@ -28,7 +28,14 @@ public class PlatilloEntity {
 	private Double precio;
 	@ManyToMany
 	private List<IngredienteEntity> ingredientes;
+	private String imagen;
 	
+	public String getImagen() {
+		return imagen;
+	}
+	public void setImagen(String imagen) {
+		this.imagen = imagen;
+	}
 	//
 	public int getIdPlatillo() {
 		return idPlatillo;
