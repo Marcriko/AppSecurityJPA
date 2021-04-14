@@ -18,8 +18,6 @@ public class DetallePedido {
 	@ManyToOne
 	private PlatilloEntity platillo;
 	
-	
-	
 	private String nota; //mensaje personalizado
 	
 	private int cantidad;
