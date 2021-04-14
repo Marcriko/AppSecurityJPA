@@ -10,4 +10,5 @@ import com.webappsecurity.security.entity.PlatilloEntity;
 @Repository
 public interface PlatilloRepository extends JpaRepository<PlatilloEntity, Integer>{
 	PlatilloEntity findByIdPlatillo(int idPlatillo);
+	PlatilloEntity findByNombre(String nombrePlatillo);
 }

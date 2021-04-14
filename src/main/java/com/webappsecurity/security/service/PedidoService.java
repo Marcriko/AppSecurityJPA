@@ -11,10 +11,12 @@ import org.springframework.transaction.annotation.Transactional;
 import com.webappsecurity.security.entity.DetallePedido;
 import com.webappsecurity.security.entity.IngredienteEntity;
 import com.webappsecurity.security.entity.PedidoEntity;
+import com.webappsecurity.security.entity.PlatilloEntity;
 import com.webappsecurity.security.entity.Usuario;
 import com.webappsecurity.security.repository.CuponRepository;
 import com.webappsecurity.security.repository.DetallePedidoRepository;
 import com.webappsecurity.security.repository.PedidoRepository;
+import com.webappsecurity.security.repository.PlatilloRepository;
 import com.webappsecurity.security.repository.UsuarioRepository;
 
 
@@ -27,7 +29,8 @@ public class PedidoService {
 	private UsuarioRepository usuarioRepository;
 	@Autowired
 	private DetallePedidoRepository detallePedidoRepository;
-
+	@Autowired
+	private PlatilloRepository platilloRepository;
 	
 	public List<PedidoEntity> pedidoEntities() {
 		return pedidoRepository.findAll();
@@ -38,6 +41,7 @@ public class PedidoService {
 		List<DetallePedido> detallePedidos= new ArrayList<DetallePedido>();
 		for (DetallePedido detallePedido : pedidoEntity.getDetalle()) {
 			System.out.println(detallePedido.toString());
+			detallePedido.setPlatillo(platilloRepository.findByNombre(detallePedido.getPlatillo().getNombre()));
 			detallePedidos.add(detallePedidoRepository.save(detallePedido)); 
 		}
 		pedidoEntity.setDetalle(detallePedidos);
