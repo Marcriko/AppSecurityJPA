@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.webappsecurity.security.entity.IngredienteEntity;
+import com.webappsecurity.security.jwt.JwtProvider;
 import com.webappsecurity.security.service.IngredienteService;
 
 
@@ -40,6 +41,7 @@ public class IngredienteController {
 	
 	@PostMapping("/ingredientes/save")
 	public boolean save(@Valid @RequestBody IngredienteEntity ingrediente) {
+		
 		return ingredienteService.save(ingrediente);
 	}
 	

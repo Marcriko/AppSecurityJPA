@@ -31,16 +31,11 @@ public class PlatilloEntity {
 	@ManyToMany
 	private List<IngredienteEntity> ingredientes;
 	private String imagen;
-	@NotNull
-	@ManyToOne
-	private CategoriaEntity categoria;
+	//@NotNull
+	//@ManyToOne
+	//private CategoriaEntity categoria;
 	
-	public CategoriaEntity getCategoria() {
-		return categoria;
-	}
-	public void setCategoria(CategoriaEntity categoria) {
-		this.categoria = categoria;
-	}
+	
 	public String getImagen() {
 		return imagen;
 	}

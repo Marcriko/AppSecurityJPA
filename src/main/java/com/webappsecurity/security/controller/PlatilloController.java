@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.webappsecurity.security.entity.PlatilloEntity;
+import com.webappsecurity.security.jwt.JwtProvider;
 import com.webappsecurity.security.service.PlatilloService;
 
 @RestController
@@ -43,6 +44,7 @@ public class PlatilloController {
 	
 	@DeleteMapping("/platillo/delete/{id}")
 	public boolean delete(@PathVariable("id") int id) {
+		
 		return platilloService.delete(id);
 	}
 	

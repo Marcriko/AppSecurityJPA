@@ -18,11 +18,12 @@ public class IngredienteService {
 	private IngredienteRepository ingredienteRepository;
 	
 	public List<IngredienteEntity> ingredienteEntities() {
+		
 		return ingredienteRepository.findAll();
 	}
 	
 	public boolean save(IngredienteEntity entity) {
-		System.out.println(SecurityContextHolder.getContext());
+		System.out.println(SecurityContextHolder.getContext().getAuthentication().getPrincipal());
 		return ingredienteRepository.existsById((int) ingredienteRepository.save(entity).getIdIngrediente());
 	}
 	
