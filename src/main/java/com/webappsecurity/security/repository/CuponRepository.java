@@ -9,5 +9,5 @@ import com.webappsecurity.security.entity.CuponEntity;
 
 @Repository
 public interface CuponRepository extends JpaRepository<CuponEntity, Integer>{
-	
+	CuponEntity findByCodigo (String code);
 }

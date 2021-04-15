@@ -39,7 +39,10 @@ public class CuponController {
 	public CuponEntity findOne(@PathVariable("id") int id) {
 		return cuponService.getCuponEntity(id);
 	}
-	
+	@GetMapping("/cupon/findByCode/{code}")
+	public CuponEntity findByCodigo(@PathVariable("code") String id) {
+		return cuponService.getByCodigo(id);
+	}
 	@PostMapping("/cupon/save")
 	public boolean save(@RequestBody CuponEntity cupon) {
 		return cuponService.save(cupon);
