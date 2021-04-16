@@ -1,6 +1,7 @@
 package com.webappsecurity.security.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.transaction.Transactional;
 
@@ -20,7 +21,7 @@ public class CategoriaService {
 		return categoriaRepository.findAll();
 	}
 	
-	public CategoriaEntity getCategoriaEntity(int id) {
+	public Optional<CategoriaEntity> getCategoriaEntity(int id) {
 		return categoriaRepository.findByIdCategoria(id);
 	}
 	

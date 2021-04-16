@@ -1,6 +1,9 @@
 package com.webappsecurity.security.controller;
 
 import java.util.List;
+import java.util.Optional;
+
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.webappsecurity.security.entity.CategoriaEntity;
+import com.webappsecurity.security.exception.ResourceNotFoundException;
 import com.webappsecurity.security.service.CategoriaService;
 
 @RestController
@@ -25,14 +29,14 @@ public class CategoriaController {
 	
 	@GetMapping("/categoria/findById/{id}")
 	public CategoriaEntity findById(@PathVariable int id){
-		return categoriaService.getCategoriaEntity(id);
+		return categoriaService.getCategoriaEntity(id).orElseThrow(()-> new ResourceNotFoundException("Categoría no encontrada"));
 	}
 	@GetMapping("/categoria/findAll")
 	public List<CategoriaEntity> findAll(){
 		return categoriaService.getCategoriaEntities();
 	}
 	@PostMapping("/categoria/save")
-	public boolean save(@RequestBody CategoriaEntity categoriaEntity) {
+	public boolean save(@Valid @RequestBody CategoriaEntity categoriaEntity) {
 		return categoriaService.save(categoriaEntity);
 	}
 }

@@ -33,7 +33,7 @@ public class CuponService {
 	public CuponEntity getCuponEntity(int id) {
 		return cuponRepository.getOne(id);
 	}
-	public CuponEntity getByCodigo(String codigo) {
+	public Optional<CuponEntity> getByCodigo(String codigo) {
 		return cuponRepository.findByCodigo(codigo);
 	}
 	

@@ -2,6 +2,8 @@ package com.webappsecurity.security.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.webappsecurity.security.entity.CuponEntity;
+import com.webappsecurity.security.exception.ResourceNotFoundException;
 import com.webappsecurity.security.service.CuponService;
 import com.webappsecurity.security.service.PlatilloService;
 
@@ -41,10 +44,10 @@ public class CuponController {
 	}
 	@GetMapping("/cupon/findByCode/{code}")
 	public CuponEntity findByCodigo(@PathVariable("code") String id) {
-		return cuponService.getByCodigo(id);
+		return cuponService.getByCodigo(id).orElseThrow(()-> new ResourceNotFoundException("Cupón no encontrado"));
 	}
 	@PostMapping("/cupon/save")
-	public boolean save(@RequestBody CuponEntity cupon) {
+	public boolean save(@Valid @RequestBody CuponEntity cupon) {
 		return cuponService.save(cupon);
 	}
 	

@@ -1,5 +1,7 @@
 package com.webappsecurity.security.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,5 +11,5 @@ import com.webappsecurity.security.entity.CuponEntity;
 
 @Repository
 public interface CuponRepository extends JpaRepository<CuponEntity, Integer>{
-	CuponEntity findByCodigo (String code);
+	Optional< CuponEntity> findByCodigo (String code);
 }
