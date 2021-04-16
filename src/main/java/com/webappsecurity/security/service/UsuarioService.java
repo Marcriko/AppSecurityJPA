@@ -55,4 +55,8 @@ public class UsuarioService {
 		}
 		return false;
 	}
+	public boolean deleteUser (int id) {
+		usuarioRepository.deleteById(id);
+		return !usuarioRepository.existsById(id);
+	}
 }
