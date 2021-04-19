@@ -30,7 +30,7 @@ public class PlatilloEntity {
 	private Double precio;
 	@ManyToMany
 	private List<IngredienteEntity> ingredientes;
-	private Blob imagen;
+	private String imagen;
 	@NotNull
 	@ManyToOne
 	private CategoriaEntity categoria;
@@ -42,10 +42,10 @@ public class PlatilloEntity {
 	public void setCategoria(CategoriaEntity categoria) {
 		this.categoria = categoria;
 	}
-	public Blob getImagen() {
+	public String getImagen() {
 		return imagen;
 	}
-	public void setImagen(Blob imagen) {
+	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
 	//
