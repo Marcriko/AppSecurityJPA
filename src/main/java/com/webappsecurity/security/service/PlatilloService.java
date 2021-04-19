@@ -30,7 +30,7 @@ public class PlatilloService {
 	}
 	
 	public boolean save(PlatilloEntity platilloEntity) throws IOException {
-		System.out.println("prubea " + platilloEntity.getImagen());
+		/*System.out.println("prubea " + platilloEntity.getImagen());
 		byte [] baits = Base64.getMimeDecoder().decode(platilloEntity.getImagen());
 		
 		File saveFile = new File("C:/Users/marco/uploads"+File.separator);
@@ -38,7 +38,8 @@ public class PlatilloService {
 		BufferedOutputStream bStream = new BufferedOutputStream(new FileOutputStream(scanFile));
 		bStream.write(baits);
 		bStream.close();
-		
+		*/
+		System.out.println(platilloEntity.getImagen());
 		//platilloEntity.getImagen()
 		List<IngredienteEntity> ingredientes = new ArrayList<IngredienteEntity>();
 		for (IngredienteEntity ingredienteEntity : platilloEntity.getIngredientes()) {
