@@ -1,7 +1,9 @@
 package com.webappsecurity.security.entity;
 
+import java.sql.Blob;
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,7 +32,8 @@ public class PlatilloEntity {
 	private Double precio;
 	@ManyToMany
 	private List<IngredienteEntity> ingredientes;
-	private String imagen;
+	
+	private Blob imagen;
 	@NotNull
 	@ManyToOne
 	private CategoriaEntity categoria;
@@ -42,10 +45,11 @@ public class PlatilloEntity {
 	public void setCategoria(CategoriaEntity categoria) {
 		this.categoria = categoria;
 	}
-	public String getImagen() {
+	
+	public Blob getImagen() {
 		return imagen;
 	}
-	public void setImagen(String imagen) {
+	public void setImagen(Blob imagen) {
 		this.imagen = imagen;
 	}
 	//

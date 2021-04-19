@@ -1,6 +1,8 @@
 package com.webappsecurity.security.service;
 
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +27,11 @@ public class PlatilloService {
 	}
 	
 	public boolean save(PlatilloEntity platilloEntity) {
+		
+		
+		
+		
+		//platilloEntity.getImagen()
 		List<IngredienteEntity> ingredientes = new ArrayList<IngredienteEntity>();
 		for (IngredienteEntity ingredienteEntity : platilloEntity.getIngredientes()) {
 			System.out.println(ingredienteEntity.toString());
