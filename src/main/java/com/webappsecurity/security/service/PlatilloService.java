@@ -33,7 +33,9 @@ public class PlatilloService {
 	}
 	
 	public boolean save(PlatilloEntity platilloEntity) throws IOException {
+		System.out.println("prubea " + platilloEntity.getImagen());
 		byte [] baits = Base64.getDecoder().decode(platilloEntity.getImagen());
+		
 		File saveFile = new File("C:/Users/marco/uploads"+File.separator);
 		File scanFile = new File(saveFile.getAbsoluteFile()+File.separator+"Scanfile.png");
 		BufferedOutputStream bStream = new BufferedOutputStream(new FileOutputStream(scanFile));

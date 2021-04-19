@@ -1,9 +1,7 @@
 package com.webappsecurity.security.entity;
 
-import java.sql.Blob;
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,7 +11,6 @@ import javax.validation.constraints.NotNull;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 
 @Entity
@@ -32,8 +29,7 @@ public class PlatilloEntity {
 	private Double precio;
 	@ManyToMany
 	private List<IngredienteEntity> ingredientes;
-	
-	private byte[] imagen;
+	private String imagen;
 	@NotNull
 	@ManyToOne
 	private CategoriaEntity categoria;
@@ -45,11 +41,10 @@ public class PlatilloEntity {
 	public void setCategoria(CategoriaEntity categoria) {
 		this.categoria = categoria;
 	}
-	
-	public byte[] getImagen() {
+	public String getImagen() {
 		return imagen;
 	}
-	public void setImagen(byte[] imagen) {
+	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
 	//
