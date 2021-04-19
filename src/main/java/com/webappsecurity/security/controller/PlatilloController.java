@@ -31,6 +31,13 @@ public class PlatilloController {
 		return platilloService.platilloEntities();
 	}
 	
+	
+	@GetMapping("/platillo/findByName/{param}")
+	public List<PlatilloEntity> findByName(String param){
+		return platilloService.getLikeEntities(param);
+	}
+	
+	
 	@GetMapping("/platillo/findOne/{id}")
 	public PlatilloEntity findOne(@PathVariable("id") int id) {
 		return platilloService.getPlatilloEntity(id);
@@ -47,5 +54,6 @@ public class PlatilloController {
 		
 		return platilloService.delete(id);
 	}
+	
 	
 }

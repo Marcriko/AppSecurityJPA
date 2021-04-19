@@ -43,4 +43,8 @@ public class PlatilloService {
 	public PlatilloEntity getPlatilloEntity(int id) {
 		return platilloRepository.findByIdPlatillo(id);
 	}
+	
+	public List<PlatilloEntity> getLikeEntities(String comparando) {
+		return platilloRepository.findByNombreContains(comparando);
+	}
 }

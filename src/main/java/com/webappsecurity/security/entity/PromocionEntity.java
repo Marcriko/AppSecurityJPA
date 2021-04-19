@@ -35,7 +35,6 @@ public class PromocionEntity {
 	@NotNull
 	private String imagen;
 	
-	
 	@NotNull
 	@ManyToMany
 	private List<PlatilloEntity> platillos;
