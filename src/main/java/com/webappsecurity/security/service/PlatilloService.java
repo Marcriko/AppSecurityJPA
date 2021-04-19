@@ -2,11 +2,8 @@ package com.webappsecurity.security.service;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
@@ -34,7 +31,7 @@ public class PlatilloService {
 	
 	public boolean save(PlatilloEntity platilloEntity) throws IOException {
 		System.out.println("prubea " + platilloEntity.getImagen());
-		byte [] baits = Base64.getDecoder().decode(platilloEntity.getImagen());
+		byte [] baits = Base64.getMimeDecoder().decode(platilloEntity.getImagen());
 		
 		File saveFile = new File("C:/Users/marco/uploads"+File.separator);
 		File scanFile = new File(saveFile.getAbsoluteFile()+File.separator+"Scanfile.png");
