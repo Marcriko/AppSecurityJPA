@@ -31,7 +31,11 @@ public class PlatilloEntity {
 	@ManyToMany
 	private List<IngredienteEntity> ingredientes;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	private String imagen;
+=======
+	private Blob imagen;
+>>>>>>> parent of db24545 (ultimos cambiios)
 	@NotNull
 	@ManyToOne
 	private CategoriaEntity categoria;
@@ -43,10 +47,10 @@ public class PlatilloEntity {
 	public void setCategoria(CategoriaEntity categoria) {
 		this.categoria = categoria;
 	}
-	public String getImagen() {
+	public Blob getImagen() {
 		return imagen;
 	}
-	public void setImagen(String imagen) {
+	public void setImagen(Blob imagen) {
 		this.imagen = imagen;
 	}
 =======
