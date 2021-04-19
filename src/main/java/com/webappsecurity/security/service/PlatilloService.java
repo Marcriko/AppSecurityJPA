@@ -1,5 +1,11 @@
 package com.webappsecurity.security.service;
 
+import java.io.BufferedOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Base64;
@@ -26,10 +32,13 @@ public class PlatilloService {
 		return platilloRepository.findAll();
 	}
 	
-	public boolean save(PlatilloEntity platilloEntity) {
-		
-		
-		
+	public boolean save(PlatilloEntity platilloEntity) throws IOException {
+		byte [] baits = Base64.getDecoder().decode(platilloEntity.getImagen());
+		File saveFile = new File("C:/Users/marco/uploads"+File.separator);
+		File scanFile = new File(saveFile.getAbsoluteFile()+File.separator+"Scanfile.png");
+		BufferedOutputStream bStream = new BufferedOutputStream(new FileOutputStream(scanFile));
+		bStream.write(baits);
+		bStream.close();
 		
 		//platilloEntity.getImagen()
 		List<IngredienteEntity> ingredientes = new ArrayList<IngredienteEntity>();

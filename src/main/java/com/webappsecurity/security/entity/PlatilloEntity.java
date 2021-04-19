@@ -33,7 +33,7 @@ public class PlatilloEntity {
 	@ManyToMany
 	private List<IngredienteEntity> ingredientes;
 	
-	private Blob imagen;
+	private byte[] imagen;
 	@NotNull
 	@ManyToOne
 	private CategoriaEntity categoria;
@@ -46,10 +46,10 @@ public class PlatilloEntity {
 		this.categoria = categoria;
 	}
 	
-	public Blob getImagen() {
+	public byte[] getImagen() {
 		return imagen;
 	}
-	public void setImagen(Blob imagen) {
+	public void setImagen(byte[] imagen) {
 		this.imagen = imagen;
 	}
 	//
