@@ -30,6 +30,7 @@ public class PlatilloEntity {
 	private Double precio;
 	@ManyToMany
 	private List<IngredienteEntity> ingredientes;
+<<<<<<< HEAD
 	private String imagen;
 	@NotNull
 	@ManyToOne
@@ -48,6 +49,9 @@ public class PlatilloEntity {
 	public void setImagen(String imagen) {
 		this.imagen = imagen;
 	}
+=======
+	
+>>>>>>> parent of 0f711a2 (imagen)
 	//
 	public int getIdPlatillo() {
 		return idPlatillo;
