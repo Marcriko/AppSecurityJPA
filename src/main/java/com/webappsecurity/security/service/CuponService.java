@@ -31,7 +31,7 @@ public class CuponService {
 	}
 	
 	public CuponEntity getCuponEntity(int id) {
-		return cuponRepository.getOne(id);
+		return cuponRepository.findById(id).get();
 	}
 	public Optional<CuponEntity> getByCodigo(String codigo) {
 		return cuponRepository.findByCodigo(codigo);
