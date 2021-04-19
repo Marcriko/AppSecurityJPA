@@ -3,11 +3,13 @@ package com.webappsecurity.security.service;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.webappsecurity.security.entity.CuponEntity;
 import com.webappsecurity.security.entity.DetallePedido;
 import com.webappsecurity.security.entity.IngredienteEntity;
 import com.webappsecurity.security.entity.PedidoEntity;
@@ -31,7 +33,8 @@ public class PedidoService {
 	private DetallePedidoRepository detallePedidoRepository;
 	@Autowired
 	private PlatilloRepository platilloRepository;
-	
+	@Autowired
+	private CuponRepository cuponRepository;
 	public List<PedidoEntity> pedidoEntities() {
 		return pedidoRepository.findAll();
 	}
@@ -44,6 +47,10 @@ public class PedidoService {
 			detallePedido.setPlatillo(platilloRepository.findByNombre(detallePedido.getPlatillo().getNombre()));
 			detallePedidos.add(detallePedidoRepository.save(detallePedido)); 
 		}
+		Optional<CuponEntity> cuponEntity = cuponRepository.findByCodigo(pedidoEntity.getCupon().getCodigo());
+		cuponEntity.get().setLimiteUsos(cuponEntity.get().getLimiteUsos()-1);
+		pedidoEntity.setCupon(cuponRepository.save(cuponEntity.get()));
+		
 		pedidoEntity.setDetalle(detallePedidos);
 		
 		

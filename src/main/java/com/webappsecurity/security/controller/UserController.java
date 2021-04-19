@@ -32,5 +32,5 @@ public class UserController {
 	public boolean deleteUser(@PathVariable int id) {
 		return usuarioService.deleteUser(id);
 	}
-
+ 
 }
