@@ -10,6 +10,7 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -19,27 +20,24 @@ public class PedidoEntity {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int idPedido;
+	@OneToMany
+	private List <OrdenEntity> ordenes;
+	
 	@NotNull
 	@ManyToOne
 	private Usuario cliente;
+	
 	@NotNull
 	private Date fecha;
 	@ManyToOne
 	private PromocionEntity promocion;
 	@ManyToOne
 	private CuponEntity cupon;
+	
 	@NotNull
 	@ManyToOne
 	private EstadoEntity estado;
-	@OneToMany
-	private List<DetallePedido> detalle;
 	
-	public List<DetallePedido> getDetalle() {
-		return detalle;
-	}
-	public void setDetalle(List<DetallePedido> detalle) {
-		this.detalle = detalle;
-	}
 	@NotNull
 	private double precio;
 	public double getPrecio() {
