@@ -1,5 +1,6 @@
 package com.webappsecurity.security.controller;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,7 +45,7 @@ public class PlatilloController {
 	}
 	
 	@PostMapping("/platillo/save")
-	public boolean save(@RequestBody PlatilloEntity platillo) {
+	public boolean save(@RequestBody PlatilloEntity platillo) throws IOException {
 		
 		return platilloService.save(platillo);
 	}
