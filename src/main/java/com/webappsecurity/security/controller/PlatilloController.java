@@ -33,7 +33,7 @@ public class PlatilloController {
 	
 	
 	@GetMapping("/platillo/findByName/{param}")
-	public List<PlatilloEntity> findByName(String param){
+	public List<PlatilloEntity> findByName(@PathVariable String param){
 		return platilloService.getLikeEntities(param);
 	}
 	
