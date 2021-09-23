@@ -29,18 +29,9 @@ public class PlatilloService {
 		return platilloRepository.findAll();
 	}
 	
-	public boolean save(PlatilloEntity platilloEntity) throws IOException {
-		/*System.out.println("prubea " + platilloEntity.getImagen());
-		byte [] baits = Base64.getMimeDecoder().decode(platilloEntity.getImagen());
+	public boolean save(PlatilloEntity platilloEntity) {
 		
-		File saveFile = new File("C:/Users/marco/uploads"+File.separator);
-		File scanFile = new File(saveFile.getAbsoluteFile()+File.separator+"Scanfile.png");
-		BufferedOutputStream bStream = new BufferedOutputStream(new FileOutputStream(scanFile));
-		bStream.write(baits);
-		bStream.close();
-		*/
-		System.out.println(platilloEntity.getImagen());
-		//platilloEntity.getImagen()
+		
 		List<IngredienteEntity> ingredientes = new ArrayList<IngredienteEntity>();
 		for (IngredienteEntity ingredienteEntity : platilloEntity.getIngredientes()) {
 			System.out.println(ingredienteEntity.toString());
