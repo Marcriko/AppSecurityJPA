@@ -1,5 +1,6 @@
 package com.webappsecurity.security.entity;
 
+import java.sql.Blob;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -29,7 +30,12 @@ public class PlatilloEntity {
 	private Double precio;
 	@ManyToMany
 	private List<IngredienteEntity> ingredientes;
+<<<<<<< HEAD
+<<<<<<< HEAD
 	private String imagen;
+=======
+	private Blob imagen;
+>>>>>>> parent of db24545 (ultimos cambiios)
 	@NotNull
 	@ManyToOne
 	private CategoriaEntity categoria;
@@ -41,12 +47,15 @@ public class PlatilloEntity {
 	public void setCategoria(CategoriaEntity categoria) {
 		this.categoria = categoria;
 	}
-	public String getImagen() {
+	public Blob getImagen() {
 		return imagen;
 	}
-	public void setImagen(String imagen) {
+	public void setImagen(Blob imagen) {
 		this.imagen = imagen;
 	}
+=======
+	
+>>>>>>> parent of 0f711a2 (imagen)
 	//
 	public int getIdPlatillo() {
 		return idPlatillo;
